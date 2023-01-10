@@ -49,11 +49,7 @@ This project is about storing books details, like title and author names.
 
 ### Key Features <a name="key-features"></a>
 
-- **An introduction section**
-- **Project works**
-- **About secton**
-- **Contact Me secton**
-- **Compatible in mobile, tab and desktop**
+- **Stores Books title and authors details.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -87,10 +83,10 @@ To run the project, execute the following command:
 
 ### Preview
 
-<img src="images/Portfolio.png" alt="logo" width="140"  height="auto" />
+<!-- <img src="" alt="logo" width="140"  height="auto" /> -->
 <br/>
 
-- [Visit here](https://dhirajsingha143.github.io/Portfolio/) for demo verson.
+- [Visit here]() for demo verson.
 
 <!-- AUTHORS -->
 
@@ -135,7 +131,7 @@ Feel free to check the [issues page](../../issues/).
 
 🙏 Acknowledgments
 
-I appreciate Microverse for providing the learning resources for this exercise, and my coding partners for helping me out when I ran into problems.
+I appreciate Microverse for providing the learning resources for this exercise, and my coding partners **Shaaibu Suleiman** for helping me out when I ran into problems.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
