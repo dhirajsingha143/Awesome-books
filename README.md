@@ -1,10 +1,10 @@
-# Portfolio-Project
+# Awesome Books-Project
 
 <a name="readme-top"></a>
 
 <div align="center">
 
-  <h3><b>Portfolio Setup</b></h3>
+  <h3><b>Awesome Books-Project</b></h3>
 
 </div>
 
@@ -27,7 +27,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Portfolio Setup <a name="about-project"></a>
+# 📖 Awesome Books-Project Setup <a name="about-project"></a>
 
 This project is about storing books details, like title and author names.
 
@@ -65,7 +65,7 @@ A Browser
 
 Clone this repository to your desired folder:
 
-[`dhirajsingha143/Portfolio`](https://github.com/dhirajsingha143/Awesome-books.git)
+[`dhirajsingha143/Awesome-Books`](https://github.com/dhirajsingha143/Awesome-books.git)
 
 ### Install
 
@@ -86,7 +86,7 @@ To run the project, execute the following command:
 <!-- <img src="" alt="logo" width="140"  height="auto" /> -->
 <br/>
 
-- [Visit here]() for demo verson.
+- [Visit here](https://deploy-preview-1--iridescent-kleicha-f17af8.netlify.app/) for demo verson.
 
 <!-- AUTHORS -->
 
