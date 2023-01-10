@@ -1,3 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
 .container {
-  margin-left: 40%;
+  width: 100vw;
+  padding: 1rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.books-container {
+  height: 100px;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 0;
+}
+
+.book-store {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.book-form {
+  width: 100vw;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
