@@ -10,7 +10,7 @@ const deleteBook = (btn) => {
   localStorage.setItem('books', JSON.stringify(books));
 };
 
-const dispalyBooks = () => {
+const displayBooks = () => {
   const books = JSON.parse(localStorage.getItem('books'));
   container.innerHTML = '';
   if (books) {
@@ -31,7 +31,7 @@ const dispalyBooks = () => {
   removeBtns.forEach((btn) => btn.addEventListener('click', () => deleteBook(btn)));
 };
 
-dispalyBooks();
+displayBooks();
 
 // Adds Book information to Local Storage
 const addToStore = (bookObj, title, author) => {
@@ -62,5 +62,5 @@ form.addEventListener('submit', (event) => {
 
   // Update the Storage and User Interface
   addToStore(bookObj, title, author);
-  dispalyBooks();
+  displayBooks();
 });
