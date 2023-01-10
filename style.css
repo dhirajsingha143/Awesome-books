@@ -3,8 +3,12 @@
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 2000px;
   margin: 0 auto;
+}
+
+.nav {
+  padding-left: 5rem;
 }
 
 .padding-x {
@@ -30,8 +34,8 @@
   flex-wrap: nowrap;
   gap: 4rem;
   overflow: hidden;
-  border: 1px solid black;
   height: 30px;
+  border-bottom: 1px solid black;
 }
 
 .book-store {
