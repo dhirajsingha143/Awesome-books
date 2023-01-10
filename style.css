@@ -65,7 +65,7 @@ input {
 }
 
 .remove-button {
-  background-color: red;
+  background-color: orangered;
   height: auto;
   display: flex;
   justify-content: center;
