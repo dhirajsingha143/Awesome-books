@@ -2,7 +2,7 @@ const container = document.querySelector('.books-container');
 const form = document.getElementById('form-container');
 
 // Function to delete book from the list and local storage.
-const deleteBook = (btn) => {
+const removeBook = (btn) => {
   const parent = btn.parentElement;
   parent.parentElement.removeChild(parent);
   let books = JSON.parse(localStorage.getItem('books'));
@@ -28,7 +28,7 @@ const displayBooks = () => {
     });
   }
   const removeBtns = Array.from(document.querySelectorAll('.remove-button'));
-  removeBtns.forEach((btn) => btn.addEventListener('click', () => deleteBook(btn)));
+  removeBtns.forEach((btn) => btn.addEventListener('click', () => removeBook(btn)));
 };
 
 displayBooks();
