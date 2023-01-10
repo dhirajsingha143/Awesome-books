@@ -1,4 +1,4 @@
-const booksContainer = document.querySelector('.books-container');
+const container = document.querySelector('.books-container');
 const form = document.getElementById('form-container');
 
 // Function to delete book from the list and local storage.
@@ -12,7 +12,7 @@ const deleteBook = (btn) => {
 
 const dispalyBooks = () => {
   const books = JSON.parse(localStorage.getItem('books'));
-  booksContainer.innerHTML = '';
+  container.innerHTML = '';
   if (books) {
     books.forEach((book) => {
       if (book.title && book.author) {
@@ -23,7 +23,7 @@ const dispalyBooks = () => {
           <div class= "book-author"> By ${book.author} </div>
           <button id = '${book.title}' type="button" class="remove-button"> Remove </button>
           `;
-        booksContainer.appendChild(bookUI);
+        container.appendChild(bookUI);
       }
     });
   }
