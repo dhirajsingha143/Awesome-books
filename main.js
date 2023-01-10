@@ -21,7 +21,7 @@ const displayBooks = () => {
         bookUI.innerHTML = `
           <p class="book-title"> Title: ${book.title}</p>
           <div class= "book-author"> By ${book.author} </div>
-          <button id = '${book.title}' type="button" class="remove-button"> Remove </button>
+          <button id = '${book.title}' type="button" class="remove-button"> Remove Book </button>
           `;
         container.appendChild(bookUI);
       }
