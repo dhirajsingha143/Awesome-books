@@ -2,13 +2,13 @@ const booksContainer = document.querySelector('.books-container');
 const form = document.getElementById('form-container');
 
 // Function to delete book from the list and local storage.
-// const deleteBook = (btn) => {
-//     const parent = btn.parentElement;
-//     parent.parentElement.removeChild(parent);
-//     let books = JSON.parse(localStorage.getItem('books'));
-//     books = books.filter((book) => book.title !== btn.parentElement.children[0].innerHTML.slice(8));
-//     localStorage.setItem('books', JSON.stringify(books));
-// };
+const deleteBook = (btn) => {
+    const parent = btn.parentElement;
+    parent.parentElement.removeChild(parent);
+    let books = JSON.parse(localStorage.getItem('books'));
+    books = books.filter((book) => book.title !== btn.parentElement.children[0].innerHTML.slice(8));
+    localStorage.setItem('books', JSON.stringify(books));
+};
 
 const dispalyBooks = () => {
     const books = JSON.parse(localStorage.getItem('books'));
@@ -16,11 +16,11 @@ const dispalyBooks = () => {
     if (books) {
         books.forEach((book) => {
             if (book.title && book.author) {
-                const bookUI = document.createElement('li');
+                const bookUI = document.createElement('div');
                 bookUI.classList.add('book');
                 bookUI.innerHTML = `
           <p class="book-title"> Title: ${book.title}</p>
-          <p class= "book-author"> By ${book.author} </p>
+          <div class= "book-author"> By ${book.author} </div>
           <button id = '${book.title}' type="button" class="remove-button"> Remove </button>
           `;
                 booksContainer.appendChild(bookUI);
@@ -49,13 +49,10 @@ const addToStore = (bookObj, title, author) => {
     }
 };
 
-// Event Listener for the form
-const addbtn = document.getElementById('add-btn');
-
-addbtn.addEventListener('click', (e) => {
-
-    const title = document.getElementById('form-title').value;
-    const author = document.getElementById('form-author').value;
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
     const bookObj = {
         title,
         author,
@@ -66,5 +63,5 @@ addbtn.addEventListener('click', (e) => {
     // Update the Storage and User Interface
     addToStore(bookObj, title, author);
     dispalyBooks();
-
+    
 });

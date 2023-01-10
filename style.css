@@ -3,27 +3,35 @@
 }
 
 .container {
-  width: 100vw;
-  padding: 1rem;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.padding-x {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .books-container {
-  height: 100px;
-  width: 100%;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 200px;
   font-size: 20px;
   padding: 0;
 }
 
 .book {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
+  gap: 4rem;
+  overflow: hidden;
+  border: 1px solid black;
+  height: 30px;
 }
 
 .book-store {
@@ -36,12 +44,20 @@
 }
 
 .book-form {
-  width: 100vw;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+}
+
+#add-btn {
+  margin-left: 8.5rem;
+}
+
+input {
+  border: 2px solid black;
 }
 
 .remove-button {
