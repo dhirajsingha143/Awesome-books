@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.nav {
+  padding-left: 5rem;
+}
+
+.padding-x {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 200px;
+  font-size: 20px;
+  padding: 0;
+}
+
+.book {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 4rem;
+  overflow: hidden;
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+
+.book-store {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.book-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+#add-btn {
+  margin-left: 8.5rem;
+}
+
+input {
+  border: 2px solid black;
+}
+
+.remove-button {
+  background-color: orangered;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
