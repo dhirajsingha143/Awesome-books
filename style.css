@@ -20,6 +20,12 @@
   padding: 0;
 }
 
+.book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .book-store {
   width: 100vw;
   display: flex;
@@ -34,6 +40,14 @@
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-button {
+  background-color: red;
+  height: auto;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
