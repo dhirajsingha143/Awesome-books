@@ -21,8 +21,10 @@ class BookList {
           const bookUI = document.createElement('div');
           bookUI.classList.add('book');
           bookUI.innerHTML = `
+          <div class= "info">
             <p class="book-title"> Title: ${book.title}</p>
-            <div class= "book-author"> By ${book.author} </div>
+            <p class= "book-author"> by ${book.author} </p>
+          </div>
             <button id = '${book.title}' type="button" class="remove-button"> Remove Book </button>
             `;
           this.container.appendChild(bookUI);
@@ -31,7 +33,7 @@ class BookList {
     }
     const removeBtns = Array.from(document.querySelectorAll('.remove-button'));
     removeBtns.forEach((btn) => btn.addEventListener('click', () => this.removeBook(btn)));
-  };
+  }
 
   addToStore(bookObj, title, author) {
     if (title && author) {
@@ -46,7 +48,7 @@ class BookList {
         localStorage.setItem('books', JSON.stringify(books));
       }
     }
-  };
+  }
 
   formSubmit() {
     this.formSection.addEventListener('submit', (event) => {
@@ -64,10 +66,8 @@ class BookList {
       this.addToStore(bookObj, title, author);
       this.displayBooks();
     });
-  };
-
-};
-
+  }
+}
 
 const books = new BookList();
 
