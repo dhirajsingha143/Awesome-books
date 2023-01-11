@@ -1,9 +1,16 @@
 class BookList {
-  constructor () {
+  constructor() {
     this.container = document.querySelector('.books-container');
     this.formSection = document.getElementById('form-container');
   }
 
+  removeBook(btn) {
+    const parent = btn.parentElement;
+    parent.parentElement.removeChild(parent);
+    let books = JSON.parse(localStorage.getItem('books'));
+    books = books.filter((book) => book.title !== btn.parentElement.children[0].innerHTML.slice(8));
+    localStorage.setItem('books', JSON.stringify(books));
+  }
 
   displayBooks() {
     const books = JSON.parse(localStorage.getItem('books'));
@@ -52,7 +59,7 @@ class BookList {
       };
       this.formSection.elements.title.value = '';
       this.formSection.elements.author.value = '';
-    
+
       // Update the Storage and User Interface
       this.addToStore(bookObj, title, author);
       this.displayBooks();
