@@ -12,9 +12,7 @@ class Book {
     const { id, title, author } = this;
     const bookObj = { id, title, author };
     books = JSON.parse(localStorage.getItem('books'));
-    if (title === '' || author === '') {
-      printErrorMsg('Please fill in all the fields');
-    } else if (books !== null) {
+    if (books !== null) {
       books.push(bookObj);
       localStorage.setItem('books', JSON.stringify(books));
       books = JSON.parse(localStorage.getItem('books'));
@@ -74,7 +72,6 @@ if (books !== null) {
     displayBook(book.id, book.title, book.author);
   });
 }
-
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
