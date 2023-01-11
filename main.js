@@ -60,3 +60,10 @@ class BookList {
   };
 
 };
+
+
+const books = new BookList();
+
+books.addToStore();
+books.displayBooks();
+books.formSubmit();
