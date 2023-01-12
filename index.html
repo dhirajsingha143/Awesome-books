@@ -11,24 +11,24 @@
     <header>
       <nav class="nav-item">
         <h3>Awesome Books Store</h3>
-        <ul>
-          <li><a href="#">List</a></li>
-          <li><a href="#">Add New</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul class="nav-link">
+          <li><a id="link-list" href="#">List</a></li>
+          <li><a id="link-add" href="#">Add New</a></li>
+          <li><a id="link-contact" href="#">Contact</a></li>
         </ul>
       </nav>
       <p class="date-section">January 12th 2023, 07:15:44 am</p>
     </header>
   
     <main>
-      <section class="book-store">
+      <section class="book-store" id="list">
         <h1 class="headline">Awesome Books</h1>
         <ul class="books-container">
         </ul>
         <hr class="line">
       </section>
   
-      <section class="book-form">
+      <section class="book-form" id="add-book">
         <h2 class="sub-headline">Add a new book</h2>
         <form id="form-container">
           <input type="text" placeholder="Title" id="title" required><br><br>
@@ -37,11 +37,10 @@
         </form>
       </section>
 
-      <section class="contact">
+      <section class="contact" id="contact">
         <h2>Contact Information</h2>
-        <p>Do have any question or you just want to say "Hello"?</p>
-        <p>You can reach out to us!</p>
-        <ul>
+        <p>Do have any question or you just want to say "Hello"?<br>You can reach out to us!</p>
+        <ul class="contact-list">
           <li>Our Email: dhirajsingha@mail.com</li>
           <li>Our phone no: +2347039606814</li>
           <li>Our address: Hollowway road 22,84503, London, UK</li>
