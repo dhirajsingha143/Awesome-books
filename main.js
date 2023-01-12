@@ -86,12 +86,6 @@ addBtn.addEventListener('click', (e) => {
   }
 });
 
-const date = document.getElementById('date');
-// eslint-disable-next-line no-undef
-const { DateTime } = luxon;
-const now = DateTime.now();
-date.innerText = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
-
 // selecting buttons
 const listbtn = document.getElementById('link-list');
 const addbtn = document.getElementById('link-add');
@@ -119,3 +113,9 @@ contactbtn.addEventListener('click', () => {
   ac.style.display = 'none';
   cc.style.display = 'flex';
 });
+
+const date = document.getElementById('date');
+// eslint-disable-next-line no-undef
+const { DateTime } = luxon;
+const now = DateTime.now();
+date.innerText = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
