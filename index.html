@@ -8,29 +8,50 @@
   <title>Document</title>
 </head>
 <body class="container padding-x">
-    <header>
-      <nav class="nav">
-        <h3>Awesome Books Store</h3>
+    <header class="nav-container">
+      <nav class="nav-item padding-x">
+        <h3 class="logo">Awesome Books Store</h3>
+        <ul class="nav-link">
+          <li><a id="link-list" href="#">List</a></li>
+          <hr class="vertical-line">
+          <li><a id="link-add" href="#">Add New</a></li>
+          <hr class="vertical-line">
+          <li><a id="link-contact" href="#">Contact</a></li>
+        </ul>
       </nav>
+      <p class="date-section">January 12th 2023, 07:15:44 am</p>
     </header>
   
     <main>
-      <section class="book-store">
+      <section class="book-store" id="list">
         <h1 class="headline">Awesome Books</h1>
         <ul class="books-container">
         </ul>
-        <hr class="line">
       </section>
   
-      <section class="book-form">
+      <section class="book-form" id="add-book">
         <h2 class="sub-headline">Add a new book</h2>
-        <form id="form-container">
-          <input type="text" placeholder="Title" id="title" required><br><br>
-          <input type="text" placeholder="Author" id="author" required><br><br>
-          <button type="submit" id="add-btn">Add Book</button>
+        <form class="form-container" id="form-container">
+          <input class="title" type="text" placeholder="Title" id="title" required><br><br>
+          <input class="author" type="text" placeholder="Author" id="author" required><br><br>
+          <button class="add-btn" type="submit" id="add-btn">Add Book</button>
         </form>
       </section>
+
+      <section class="contact" id="contact">
+        <h2 class="contact-headline">Contact Information</h2>
+        <p class="contact-info">Do have any question or you just want to say "Hello"?<br>You can reach out to us!</p>
+        <ul class="contact-list">
+          <li>Our Email: dhirajsingha@mail.com</li>
+          <li>Our phone no: +2347039606814</li>
+          <li>Our address: Hollowway road 22,84503, London, UK</li>
+        </ul>
+      </section>
     </main>
+
+    <footer class="footer">
+      <p>&copy;copyright 2023</p>
+    </footer>
     <script src="main.js"></script>
 </body>
 </html>
