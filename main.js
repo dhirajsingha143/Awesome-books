@@ -1,69 +1,93 @@
-class BookList {
-  constructor () {
-    this.container = document.querySelector('.books-container');
-    this.formSection = document.getElementById('form-container');
+const addBtn = document.querySelector('#add-btn');
+let books = JSON.parse(localStorage.getItem('books'));
+
+class Book {
+  constructor(id, title, author) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
   }
 
-
-  displayBooks() {
-    const books = JSON.parse(localStorage.getItem('books'));
-    this.container.innerHTML = '';
-    if (books) {
-      books.forEach((book) => {
-        if (book.title && book.author) {
-          const bookUI = document.createElement('div');
-          bookUI.classList.add('book');
-          bookUI.innerHTML = `
-            <p class="book-title"> Title: ${book.title}</p>
-            <div class= "book-author"> By ${book.author} </div>
-            <button id = '${book.title}' type="button" class="remove-button"> Remove Book </button>
-            `;
-          this.container.appendChild(bookUI);
-        }
-      });
+  addBook() {
+    const { id, title, author } = this;
+    const bookObj = { id, title, author };
+    books = JSON.parse(localStorage.getItem('books'));
+    if (books !== null) {
+      books.push(bookObj);
+      localStorage.setItem('books', JSON.stringify(books));
+      books = JSON.parse(localStorage.getItem('books'));
+      document.getElementById('title').value = '';
+      document.getElementById('author').value = '';
+    } else {
+      books = [];
+      books.push(bookObj);
+      localStorage.setItem('books', JSON.stringify(books));
+      books = JSON.parse(localStorage.getItem('books'));
+      document.getElementById('title').value = '';
+      document.getElementById('author').value = '';
     }
-    const removeBtns = Array.from(document.querySelectorAll('.remove-button'));
-    removeBtns.forEach((btn) => btn.addEventListener('click', () => this.removeBook(btn)));
-  };
+  }
 
-  addToStore(bookObj, title, author) {
-    if (title && author) {
-      if (!localStorage.getItem('books')) {
-        localStorage.setItem('books', JSON.stringify([]));
-        const books = JSON.parse(localStorage.getItem('books'));
-        books.push(bookObj);
-        localStorage.setItem('books', JSON.stringify(books));
-      } else {
-        const books = JSON.parse(localStorage.getItem('books'));
-        books.push(bookObj);
-        localStorage.setItem('books', JSON.stringify(books));
+  removeBook() {
+    const { id } = this;
+    books = books.filter((book) => {
+      if (book.id !== id) {
+        return true;
       }
-    }
-  };
-
-  formSubmit() {
-    this.formSection.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const title = document.getElementById('title').value;
-      const author = document.getElementById('author').value;
-      const bookObj = {
-        title,
-        author,
-      };
-      this.formSection.elements.title.value = '';
-      this.formSection.elements.author.value = '';
-    
-      // Update the Storage and User Interface
-      this.addToStore(bookObj, title, author);
-      this.displayBooks();
+      return false;
     });
-  };
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+}
 
+const displayBook = (id, title, author) => {
+  const bookList = document.querySelector('.books-container');
+  const li = document.createElement('li');
+  li.classList.add('book');
+  li.innerHTML = `
+  <div class= "info">
+    <p class="book-title"> Title: ${title}</p>
+    <p class= "book-author"> by ${author} </p>
+  </div>`;
+  const removeBookBtn = document.createElement('button');
+  removeBookBtn.classList.add('remove-button');
+  removeBookBtn.textContent = 'Remove';
+  li.appendChild(removeBookBtn);
+  bookList.appendChild(li);
+  removeBookBtn.addEventListener('click', () => {
+    const book = new Book(id, title, author);
+    id = removeBookBtn.id;
+    book.removeBook();
+    if (li.previousElementSibling === null && li.nextElementSibling === null) {
+      bookList.classList.remove('border');
+      li.remove();
+    } else {
+      li.remove();
+    }
+  });
 };
 
+if (books !== null) {
+  books.forEach((book) => {
+    displayBook(book.id, book.title, book.author);
+  });
+}
 
-const books = new BookList();
+addBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const toTitleCase = (str) => str.toLowerCase().split(' ').map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`).join(' ');
+  const id = Date.now();
+  const book = new Book(id, toTitleCase(title), toTitleCase(author));
+  book.addBook();
+  if (title && author) {
+    displayBook(book.id, book.title, book.author);
+  }
+});
 
-books.addToStore();
-books.displayBooks();
-books.formSubmit();
+const date = document.getElementById('date');
+// eslint-disable-next-line no-undef
+const { DateTime } = luxon;
+const now = DateTime.now();
+date.innerText = now.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
